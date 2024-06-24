@@ -1,0 +1,227 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: roboto;
+}
+
+body {
+  background-color: rgb(246, 246, 246);
+  color: rgb(46, 46, 46);
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 100vh;
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-areas:
+    "nav"
+    "filtros"
+    "main"
+    "pagina"
+    "footer";
+  color: rgb(46, 46, 46);
+}
+
+nav {
+  grid-area: nav;
+  height: 85px;
+  background-color: rgb(230, 193, 193);
+  color: rgb(46, 46, 46);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 24px;
+}
+
+h1 {
+  font-family: allura;
+  font-size: 36px;
+  font-weight: 400;
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+nav i {
+  font-size: 24px;
+}
+
+nav ul {
+  display: none;
+}
+
+main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 24px;
+}
+
+.catalogoXL {
+  display: none;
+}
+
+.filtros {
+  grid-area: filtros;
+  height: 90px;
+  width: 100%;
+  background-color: rgb(222, 222, 222);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.filtros select {
+  width: 50vh;
+  height: 34px;
+  border: 1px solid rgb(199, 199, 199);
+  padding: 8px;
+}
+
+.filtros p {
+  margin-bottom: 8px;
+}
+
+.card-container {
+  height: 40rem;
+  width: 60vh;
+  border: 1px solid rgb(199, 199, 199);
+  box-shadow: 2px 2px 2px rgb(199, 199, 199);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.card-container img {
+  width: 100%;
+}
+
+.card-container p {
+  font-size: 24px;
+}
+
+button {
+  font-size: 18px;
+  color: rgb(207, 206, 206);
+  background-color: rgb(46, 46, 46);
+  border: none;
+  width: 100%;
+  height: 36px;
+}
+
+.pagina {
+  grid-area: pagina;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.pagina p {
+  border: 1px solid rgb(199, 199, 199);
+  color: rgb(212, 70, 255);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  grid-area: footer;
+  height: 80px;
+  color: rgb(207, 206, 206);
+  background-color: rgb(46, 46, 46);
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.rrss {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  align-items: center;
+}
+
+@media (min-width: 577px) {
+  body {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto repeat(4, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+      "nav filtros filtros filtros filtros"
+      "nav main main main main"
+      "nav main main main main"
+      "footer pagina pagina pagina pagina";
+  }
+
+  nav {
+    width: 14rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding: 36px 16px;
+    gap: 16px;
+  }
+
+  nav ul {
+    display: contents;
+    list-style: none;
+  }
+
+  .logo {
+    margin-bottom: 16px;
+    flex-direction: column;
+  }
+
+  .menu {
+    display: none;
+  }
+
+.filtros{
+    height: 100px;
+}
+
+  .filtros select {
+    max-width: 74rem;
+  }
+
+  main {
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-row: 1fr 1fr auto;
+    gap: 24px;
+  }
+
+  .card-container {
+    max-width: 250px;
+    height: auto;
+    margin: 34px 16px;
+  }
+
+  .card-container img {
+    height: 300px;
+  }
+
+  .catalogoXL {
+    display: contents;
+  }
+
+  footer {
+    width: 16rem;
+    margin-bottom: 0px;
+  }
+}
